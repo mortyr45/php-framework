@@ -1,0 +1,16 @@
+{
+	"dockerFile": "../docker/dev-webhost.dockerfile",
+	"name": "Our Days API",
+	"context": "..",
+	"shutdownAction": "stopContainer",
+	"overrideCommand": false,
+	"settings": { 
+		"terminal.integrated.shell.linux": null
+	},
+	"extensions": ["felixfbecker.php-intellisense", "ecmel.vscode-html-css", "dawhite.mustache"],
+	"forwardPorts": [80],
+	"appPort": 80,
+	"workspaceMount": "source=${localWorkspaceFolder},target=/var/www/html,type=bind,consistency=delegated",
+	"workspaceFolder": "/var/www/html",
+	"postCreateCommand": "apt-get update -y && apt-get install -y --no-install-recommends git npm httpie nano"
+}

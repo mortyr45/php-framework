@@ -1,0 +1,1 @@
+docker run --rm --mount type=bind,source=$(pwd),destination=/workdir php:7.4.16-alpine3.13 php -d phar.readonly=off /workdir/create-phar.php
